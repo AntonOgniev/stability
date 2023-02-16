@@ -1,0 +1,126 @@
+%boxshadow {
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05),
+    0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+
+.benefits {
+  width: 100%;
+  margin: auto;
+
+  &__container {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  & h2 {
+    text-align: center;
+  }
+
+  &__title {
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    color: var(--accentColor);
+    font-family: generalFont;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    font-family: generalFont;
+    font-size: 12px;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  &__recruitment--item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-family: generalFont;
+  }
+  &__recruitment--item::before {
+    position: relative;
+    display: block;
+    content: "";
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--accentColor);
+    margin-right: 20px;
+    padding-right: 15px;
+  }
+}
+
+ol.gradient-list {
+  counter-reset: gradient-counter;
+  list-style: none;
+  margin: 1.75rem 0;
+  padding-left: 1rem;
+  > li {
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    @extend %boxshadow;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    font-family: generalFont;
+    &::before,
+    &::after {
+      background: linear-gradient(
+        135deg,
+        var(--accentColor) 0%,
+        var(--logoColor) 100%
+      );
+      border-radius: 1rem 1rem 0 1rem;
+      content: "";
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -1rem;
+      width: 3rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      border-color: var(--backgroundColor);
+      border-style: solid;
+      border-width: 0 0.3em 0.25em 0;
+      height: 1em;
+      top: 1.3em;
+      left: 0.6em;
+      margin-top: -1em;
+      transform: rotate(45deg);
+      width: 0.5em;
+      z-index: 1;
+    }
+    @for $i from 1 through 5 {
+      &:nth-child(10n + #{$i}):before {
+        background: linear-gradient(
+          135deg,
+          rgba(var(--logoColor), $i * 0.2) 0%,
+          rgba(yellow, $i * 0.2) 100%
+        );
+      }
+    }
+    @for $i from 6 through 10 {
+      &:nth-child(10n + #{$i}):before {
+        background: linear-gradient(
+          135deg,
+          rgba(var(--logoColor), 1 - (($i - 5) * 0.2)) 0%,
+          rgba(yellow, 1 - (($i - 5) * 0.2)) 100%
+        );
+      }
+    }
+    + li {
+      margin-top: 2rem;
+    }
+  }
+}

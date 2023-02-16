@@ -1,0 +1,16 @@
+@mixin circle {
+    position: absolute;
+    content: "";
+    display: block;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+@mixin mainButton {
+    background-color: var(--accentColor);
+    color: var(--buttonColor);
+    border-radius: 10px;
+    font-family: mainFont;
+    text-transform: uppercase;
+    cursor: pointer;
+}

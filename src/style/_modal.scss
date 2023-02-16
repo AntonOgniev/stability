@@ -1,0 +1,124 @@
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: var(--modalBackground);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header--title {
+    display: block;
+    margin-bottom: 30px;
+    color: var(--accentColor);
+    font-family: secondaryFont;
+    font-size: 16px;
+    position: relative;
+    font-weight: 600;
+  }
+
+  &__content {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    top: 20%;
+    z-index: 4;
+    padding: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact {
+    font-family: secondaryFont;
+    font-size: 12px;
+    text-align: center;
+  }
+  &__contact a {
+    color: var(--accentColor);
+  }
+
+  &__input {
+    border-radius: 3px;
+    height: 32px;
+    padding: 0 20px 0 23px;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    font-family: secondaryFont;
+    color: rgba(26, 43, 72, 0.6);
+  }
+
+  &__input:focus {
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.15);
+  }
+  &__input:last-child {
+    min-height: 150px;
+  }
+
+  &__button {
+    @include mainButton;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    font-size: 8px;
+    padding: 4px 15px;
+    letter-spacing: 2px;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+}
+
+.modal.active {
+  display: block;
+}
+
+.closeBtn {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.closeBtn::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: var(--accentColor);
+  position: absolute;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.closeBtn::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: var(--accentColor);
+  position: absolute;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+@media (min-width: $tabletWidth) {
+  .modal {
+    &__content {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $desktopWidth) {
+  .modal {
+    &__content {
+      width: 25%;
+    }
+  }
+}

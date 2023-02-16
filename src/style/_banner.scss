@@ -1,0 +1,35 @@
+.banner{
+    height: 30px;
+    width:100%;
+    margin:0 auto;
+    background: #2020e5;
+    overflow: hidden;
+
+    &__content {
+      text-align:center;
+      font-family: secondaryFont;
+      color:rgb(236, 225, 71);
+      text-transform: uppercase;
+      animation: text 15s infinite linear;
+      padding-left: 100%;
+      white-space: nowrap;
+      padding-top: 5px;
+    }
+
+    &__content::after{
+      content: url(../img/ua.png);
+      position: relative;
+      top: 2px;
+      padding-left: 5px;
+    }
+  }
+
+  @keyframes text {
+    0%{
+      transform: translate(0, 0);
+    }
+    
+    100%{
+      transform: translate(-160%, 0);
+    }
+  }

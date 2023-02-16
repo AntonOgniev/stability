@@ -1,0 +1,117 @@
+.services {
+  position: relative;
+  top: 10vh;
+  text-align: center;
+  margin-bottom: 10vh;
+
+  &__item {
+    margin: auto;
+    width: 90%;
+    padding-bottom: 25px;
+  }
+
+  &__item--title {
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    color: var(--accentColor);
+    font-family: generalFont;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  &__item--text {
+    font-family: generalFont;
+    font-size: 12px;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  &__item--text span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--logoColor);
+    font-weight: 600;
+  }
+
+  &__item--logo {
+    width: 70%;
+    margin: auto;
+    padding: 20px 0;
+  }
+
+  &__item--logo svg path {
+    fill: var(--accentColor);
+  }
+
+  &__item--logo p {
+    font-family: generalFont;
+    font-size: 12px;
+    padding-top: 10px;
+    text-align: center;
+  }
+  &__item--logo h5 {
+    font-family: generalFont;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+.step {
+  height: 25vh;
+  display: flex;
+}
+
+.step__text {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 145%;
+  font-family: generalFont;
+}
+
+.step__text span {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 40%;
+  font-weight: 700;
+  font-size: 162px;
+  line-height: 155.69%;
+  color: var(--tranparencyAccent);
+}
+
+@media (min-width: $tabletWidth) {
+  .logo-container,
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .logo-container::before,
+  .steps::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50vh;
+    border: 2px solid var(--tranparencyAccent);
+    border-radius: 20px;
+  }
+
+  .step {
+    padding: 100px 0;
+    height: auto;
+  }
+}

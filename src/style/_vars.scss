@@ -1,0 +1,30 @@
+html {
+  --backgroundColor: #ffffff;
+  --primaryColor: #222222;
+  --secondaryColor: #626262;
+  --logoColor: #36b290;
+  --modalBackground: #00000033;
+  --tranparencyAccent:#43548a3e;
+
+  --accentColor: #43548a;
+  --decorationBlue: #43548a37;
+  --decorationPink: #e4e4f5;
+  --buttonColor: #ffffff;
+}
+
+[data-theme="dark"] {
+  --backgroundColor: #626262;
+  --primaryColor: #ffffff;
+  --secondaryColor: #222222;
+  --logoColor: #36b290;
+  --modalBackground: #ffffff33;
+  --tranparencyAccent:#ffffff3e;
+
+  --accentColor: #ffffff;
+  --decorationBlue: #2b2b2b;
+  --decorationPink: #46464680;
+  --buttonColor: #2b2b2b;
+}
+
+$tabletWidth:768px;
+$desktopWidth:1024px;
